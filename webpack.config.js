@@ -4,7 +4,6 @@ var path    = require('path'),
 module.exports = {
   entry: {
     index: [
-      // 'webpack-hot-middleware/client',
       __dirname + '/src/index.jsx'
     ]
   },
@@ -23,26 +22,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.json?$/,
-        loaders: 'json-loader'
-      },
-      {
         test: /\.jsx?$/,
         loaders: 'babel-loader'
-      }, {
-        test: /\.css$/,
-        loaders: 'style-loader!css-loader'
-      }, {
-        test: /\.less$/,
-        loaders: 'style-loader!css-loader!less-loader'
-      }, {
-        test: /\.(png|jpg|ttf|woff)$/,
-        loaders: 'file-loader'
       }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     
     new webpack.DefinePlugin({
       'process.env': {
